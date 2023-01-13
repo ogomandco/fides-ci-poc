@@ -1,0 +1,21 @@
+name: Fides CD
+
+# Run the check every time a new commit hits the default branch
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "*"
+
+jobs:
+  fides_cd:
+    runs-on: ubuntu-latest
+    container:
+      image: ethyca/fides:latest
+    steps:
+      - name: Evaluation
+        uses: actions/checkout@v2
+        run: fides evaluate .fides/
+        env:
+          FIDES__CLI__SERVER_HOST: "fides.privacyco.com"
