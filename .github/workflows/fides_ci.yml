@@ -27,6 +27,8 @@ jobs:
         run: pip install toml>=0.10
       - name: Install Loguru
         run: pip install loguru
+      - name: Install pydantic
+        run: pip install pydantic<1.10.0
       - name: Evaluation
         run: fides evaluate .fides/
         env:
