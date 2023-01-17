@@ -10,7 +10,7 @@ on:
 env:
   IMAGE: ethyca/fides:local
   #DEFAULT_PYTHON_VERSION: "3.10.7"
-  DEFAULT_PYTHON_VERSION: "3.8.14"
+  DEFAULT_PYTHON_VERSION: "3.9.14"
 
 jobs:
   fides_cd:
