@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Nox
-        run: nox
       - name: Evaluation
         run: fides evaluate .fides/
         env:
