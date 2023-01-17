@@ -16,8 +16,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Nox
+        run: nox
       - name: Evaluation
         run: nox
-        run: fides evaluate .fides/
         env:
           FIDES__CLI__SERVER_HOST: "fides.privacyco.com"
