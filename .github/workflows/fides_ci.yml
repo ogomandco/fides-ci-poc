@@ -28,7 +28,7 @@ jobs:
       - name: Install Loguru
         run: pip install loguru
       - name: Install pydantic
-        run: pip install pydantic<1.10.0
+        run: pip install pydantic
       - name: Evaluation
         run: fides evaluate .fides/
         env:
