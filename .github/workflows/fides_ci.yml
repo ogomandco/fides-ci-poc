@@ -25,6 +25,8 @@ jobs:
         run: pip install nox>=2022
       - name: Install Toml
         run: pip install toml>=0.10
+      - name: Install Loguru
+        run: pip install loguru
       - name: Evaluation
         run: fides evaluate .fides/
         env:
