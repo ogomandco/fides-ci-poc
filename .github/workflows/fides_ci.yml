@@ -16,6 +16,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.DEFAULT_PYTHON_VERSION }}
+          cache: "pip"
+      - name: Install Nox
+        run: pip install nox>=2022
+      - name: Install Toml
+        run: pip install toml>=0.10
       - name: Evaluation
         run: fides evaluate .fides/
         env:
