@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Set Up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v3
         with:
           python-version: ${{ env.DEFAULT_PYTHON_VERSION }}
           cache: "pip"
