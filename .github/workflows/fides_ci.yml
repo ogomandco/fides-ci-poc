@@ -26,11 +26,11 @@ jobs:
           python-version: ${{ env.DEFAULT_PYTHON_VERSION }}
           cache: "pip"
       - name: Python Version
-        run: python -v; pip -v
+        run: python version();
       - name: Update PIP
         run: python -m pip install --upgrade pip
       - name: PIP Version after upgrade
-        run: pip -v
+        run: pip --version
       - name: Install reqs
         run: pip install -r requirements.txt
 #      - name: Install Nox
