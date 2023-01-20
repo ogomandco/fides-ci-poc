@@ -9,6 +9,7 @@ on:
       - "*"
 env:
   IMAGE: ethyca/fides:local
+  DEFAULT_PYTHON_VERSION: "3.8"
   #DEFAULT_PYTHON_VERSION: "3.10.8"
   #DEFAULT_PYTHON_VERSION: "3.9.14"
 
