@@ -27,6 +27,17 @@ jobs:
         run: apt-get update && apt-get install -y lsb-release && apt-get clean all
       - name: LSB Release
         run: lsb_release -a
+      - name: Install Python3.8
+        run: apt update && apt upgrade && wget https://www.python.org/ftp/python/3.8.12/Python-3.8.12.tar.xz && tar -xf Python-3.8.12.tar.xz && mv Python3.8.12 /opt/Python3.8.12 
+      - name: Install Deps
+        run: apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev curl libbz2-dev -y
+      - name: Build Python3.8
+        run: cd /opt/Python3.8.12/ && ./configure --enable-optimizations --enable-shared && make
+      - name: Make Python
+        run: make altinstall && ldconfig /opt/Python3.8.12 && python3.8 –version
+      - name: Install PyPi
+        run: wget https://bootstrap.pypa.io/get-pip.py && python3.8 get-pip.py && python3.8 -m pip install --upgrade pip && pip3.8 --version
+#      - name: Get Ubuntu Version
 #      - name: Set Up Python
 #        uses: actions/setup-python@v4
 #        with:
