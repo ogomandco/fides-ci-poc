@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install LSB Release
-        run: apt-get update && apt-get install -y lsb-release && apt-get clean all
+        run: apt-get update && apt-get install -y lsb-release wget && apt-get clean all
       - name: LSB Release
         run: lsb_release -a
       - name: Install Python3.8
