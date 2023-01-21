@@ -28,7 +28,7 @@ jobs:
       - name: LSB Release
         run: lsb_release -a
       - name: Install Python3.8
-        run: apt update && apt upgrade && wget https://www.python.org/ftp/python/3.8.12/Python-3.8.12.tar.xz && tar -xf Python-3.8.12.tar.xz && mv Python3.8.12 /opt/Python3.8.12 
+        run: apt update -y && apt upgrade -y && wget https://www.python.org/ftp/python/3.8.12/Python-3.8.12.tar.xz && tar -xf Python-3.8.12.tar.xz && mv Python3.8.12 /opt/Python3.8.12 
       - name: Install Deps
         run: apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev curl libbz2-dev -y
       - name: Build Python3.8
