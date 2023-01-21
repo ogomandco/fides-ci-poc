@@ -19,10 +19,14 @@ jobs:
     container:
       image: ethyca/fides:latest
     steps:
+      - name: Get Ubuntu Version
+        run: cat /etc/os-release
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install LSB Release
-        run: apt-get update && apt-get install -y lsb-release && apt-get clean all && lsb_release -a
+        run: apt-get update && apt-get install -y lsb-release && apt-get clean all
+      - name: LSB Release
+        run: lsb_release -a
 #      - name: Set Up Python
 #        uses: actions/setup-python@v4
 #        with:
