@@ -4,7 +4,7 @@ name: Fides CD
 on:
   push:
     branches:
-      - main
+      - mainx
     tags:
       - "*"
 env:
