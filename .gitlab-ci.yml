@@ -1,0 +1,26 @@
+stages:
+  - test
+  - deploy
+
+variables: &global-variables
+  FIDES__CLI__SERVER_HOST: "fides.privacyco.com"
+
+fides-ci:
+  stage: test
+  image: ethyca/fides
+  script: fides evaluate --dry .fides/
+  only:
+    if: '$CI_PIPELINE_SOURCE = merge_request_event'
+    changes:
+      - .fides/**
+      - .gitlab-ci.yml
+  variables:
+    <<: *global-variables
+
+fides-cd:
+  stage: deploy
+  image: ethyca/fides
+  script: fides evaluate .fides/
+  if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+  variables:
+    <<: *global-variables
